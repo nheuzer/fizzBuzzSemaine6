@@ -28,7 +28,7 @@ class FizzBuzzTest extends TestCase
         //Arrange
 
         //Act
-        $actual = $this->fizzBuzz->count(1);  //résultat de la fonction
+        $actual = $this->actCount(1);  //résultat de la fonction
         //Assert
         $this->assertEquals("1", $actual);
     }
@@ -37,7 +37,7 @@ class FizzBuzzTest extends TestCase
         //Arrange
 
         //Act
-        $actual = $this->fizzBuzz->count(2);  //résultat de la fonction
+        $actual = $this->actCount(2);  //résultat de la fonction
         //Assert
         $this->assertEquals("2", $actual);
     }
@@ -46,7 +46,7 @@ class FizzBuzzTest extends TestCase
         //Arrange
 
         //Act
-        $actual = $this->fizzBuzz->count(3);  //résultat de la fonction
+        $actual = $this->actCount(3);  //résultat de la fonction
         //Assert
         $this->assertEquals("fizz", $actual);
     }
@@ -55,7 +55,7 @@ class FizzBuzzTest extends TestCase
         //Arrange
 
         //Act
-        $actual = $this->fizzBuzz->count(4);  //résultat de la fonction
+        $actual = $this->actCount(4);  //résultat de la fonction
         //Assert
         $this->assertEquals("4", $actual);
     }
@@ -64,8 +64,13 @@ class FizzBuzzTest extends TestCase
         //Arrange
 
         //Act
-        $actual = $this->fizzBuzz->count(5);  //résultat de la fonction
+        $actual = $this->actCount(5);  //résultat de la fonction
         //Assert
         $this->assertEquals("buzz", $actual);
+    }
+
+    public function actCount(int $int): string
+    {
+        return $this->fizzBuzz->count($int);
     }
 }
