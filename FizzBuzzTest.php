@@ -16,20 +16,28 @@ class FizzBuzzTest extends TestCase
         $this->assertEquals(true, true); //identique : $this->assertTrue(true);
     }*/
 
+    private $fizzBuzz;
+
+    protected function setUp() : void
+    {
+        parent::setUp();
+        $this->fizzBuzz = new FizzBuzz();
+    }
+
     public function test_count_given1_shouldReturn1(){
         //Arrange
-        $fizzBuzz = new FizzBuzz();
+
         //Act
-        $actual = $fizzBuzz->count(1);  //résultat de la fonction
+        $actual = $this->fizzBuzz->count(1);  //résultat de la fonction
         //Assert
         $this->assertEquals("1", $actual);
     }
 
     public function test_count_given2_shouldReturn2(){
         //Arrange
-        $fizzBuzz = new FizzBuzz();
+
         //Act
-        $actual = $fizzBuzz->count(2);  //résultat de la fonction
+        $actual = $this->fizzBuzz->count(2);  //résultat de la fonction
         //Assert
         $this->assertEquals("2", $actual);
     }
